@@ -1,0 +1,7 @@
+@use "../../../assets/styles/globals.scss" as *;
+
+.heading-wrapper {
+    text-align: center;
+    background: $dark;
+    color: $light;
+}

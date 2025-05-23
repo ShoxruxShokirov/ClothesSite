@@ -1,0 +1,188 @@
+@use "../../../assets/styles/_globals.scss" as *;
+
+.modal-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    @include flex();
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+    &.closing {
+        animation: fadeOut 0.3s ease forwards;
+    }
+
+    .modal-content {
+        width: 500px;
+        padding: 50px;
+        border-radius: 10px;
+        position: relative;
+        text-align: center;
+        background-color: $light;
+        @include flex(column, center, center, 20px);
+        transform: translateY(-20px);
+        animation: slideIn 0.3s ease forwards;
+
+        .closing & {
+            animation: slideOut 0.3s ease forwards;
+        }
+
+        #close-modal {
+            position: absolute;
+            right: 2px;
+            top: -40px;
+            cursor: pointer;
+            font-size: 30px;
+            color: $white;
+            @include circle(20px);
+        }
+
+        .modal-title {
+            font-size: 2.4em;
+            color: $dark;
+        }
+
+        .modal-description {
+            color: $dark-gray;
+            line-height: 1.6;
+        }
+
+        .modal-buttons {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            button {
+                width: 100%;
+                display: block;
+                margin: 5px 0;
+                cursor: pointer;
+                border-radius: 10px;
+                padding: 20px;
+                border: none;
+                outline: none;
+                color: $white;
+                font-size: 1.4em;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                }
+
+                &.wallet-a {
+                    background: $red-gradient;
+                }
+
+                &.wallet-b {
+                    background: $indigo-gradient;
+                }
+
+                &.wallet-c {
+                    background: $green-gradient;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+// Dark theme styles
+body.dark-theme {
+    .modal-wrapper {
+        .modal-content {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+            .modal-title {
+                color: #ffffff;
+            }
+
+            .modal-description {
+                color: #e0e0e0;
+            }
+
+            #close-modal {
+                color: #ffffff;
+            }
+
+            .modal-buttons {
+                button {
+                    &.wallet-a {
+                        background: linear-gradient(135deg, #FF56BB, #FF8F77);
+
+                        &:hover {
+                            background: linear-gradient(135deg, #FF8F77, #FF56BB);
+                        }
+                    }
+
+                    &.wallet-b {
+                        background: linear-gradient(135deg, #6E56FF, #B073FF);
+
+                        &:hover {
+                            background: linear-gradient(135deg, #B073FF, #6E56FF);
+                        }
+                    }
+
+                    &.wallet-c {
+                        background: linear-gradient(135deg, #56C2FF, #48FE9C);
+
+                        &:hover {
+                            background: linear-gradient(135deg, #48FE9C, #56C2FF);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

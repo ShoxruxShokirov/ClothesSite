@@ -1,0 +1,29 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "json-server --watch src/store/db.json --port 3001"
+  },
+  "dependencies": {
+    "critters": "^0.0.23",
+    "firebase": "^11.6.0",
+    "framer-motion": "^11.0.3",
+    "json-server": "^1.0.0-beta.3",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "react-toastify": "^11.0.5",
+    "sass": "^1.71.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  }
+}

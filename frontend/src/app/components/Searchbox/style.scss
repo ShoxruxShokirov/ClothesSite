@@ -1,0 +1,122 @@
+@use "../../../assets/styles/globals" as *;
+@use "sass:color";
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-container {
+  @include flex($justify: flex-start, $gap: 10px);
+  background-color: $light-gray;
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: $text-color;
+  width: 100%;
+
+  svg {
+    color: $text-color;
+  }
+
+  .search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
+    color: $text-color;
+
+    &::placeholder {
+      color: rgba($text-color, 0.6);
+    }
+  }
+}
+
+.suggestions-container {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  padding: 4px 0;
+  max-height: 250px;
+  overflow-y: auto;
+
+  .suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    span {
+      font-weight: 500;
+      color: $text-color;
+    }
+
+    &:hover {
+      background-color: rgba($light-gray, 0.5);
+    }
+
+    &.no-results {
+      justify-content: center;
+      color: rgba($text-color, 0.6);
+      font-style: italic;
+    }
+  }
+}
+
+body.dark-theme {
+  .search-container {
+    background-color: color.adjust($dark, $lightness: 10%);
+    color: $white;
+
+    .search-input {
+      color: $white;
+
+      &::placeholder {
+        color: rgba($white, 0.6);
+      }
+    }
+
+    svg {
+      color: $white;
+    }
+  }
+
+  .suggestions-container {
+    background-color: color.adjust($dark, $lightness: 15%);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    .suggestion-item {
+      color: $white;
+
+      &:hover {
+        background-color: color.adjust($dark, $lightness: 20%);
+      }
+
+      &.no-results {
+        color: rgba($white, 0.6);
+      }
+      
+    }
+    .nft-name {
+        color: $white;
+      }
+  }
+}
