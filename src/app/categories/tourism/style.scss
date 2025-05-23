@@ -1,0 +1,412 @@
+.tourism-page {
+  background: #f7f7f7;
+  min-height: 100vh;
+
+  .page-header {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+
+    .breadcrumbs {
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: #666;
+
+      a {
+        color: #1a5ae2;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        margin: 0 8px;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #222;
+      margin: 0;
+    }
+  }
+
+  .category-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+  }
+
+  .filters-sidebar {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    height: fit-content;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    .filter-section {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e0e0e0;
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 16px;
+      }
+    }
+
+    .filter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #444;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #1a5ae2;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        accent-color: #1a5ae2;
+      }
+    }
+
+    .price-range {
+      input[type="range"] {
+        width: 100%;
+        margin-bottom: 12px;
+        accent-color: #1a5ae2;
+      }
+
+      .price-inputs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        input {
+          width: 100px;
+          padding: 8px;
+          border: 1px solid #e0e0e0;
+          border-radius: 4px;
+          font-size: 0.9rem;
+
+          &:focus {
+            outline: none;
+            border-color: #1a5ae2;
+          }
+        }
+
+        span {
+          color: #666;
+        }
+      }
+    }
+
+    .reset-filters {
+      width: 100%;
+      padding: 12px;
+      background: #f7f7f7;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      color: #666;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 16px;
+
+      &:hover {
+        background: #e0e0e0;
+        color: #222;
+      }
+    }
+  }
+
+  .products-section {
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      .products-count {
+        font-size: 0.95rem;
+        color: #666;
+
+        span {
+          font-weight: 600;
+          color: #222;
+        }
+      }
+
+      .products-controls {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .view-mode {
+          display: flex;
+          gap: 8px;
+
+          .view-btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            svg {
+              fill: #666;
+            }
+
+            &:hover {
+              border-color: #1a5ae2;
+              svg {
+                fill: #1a5ae2;
+              }
+            }
+
+            &.active {
+              background: #1a5ae2;
+              border-color: #1a5ae2;
+              svg {
+                fill: #fff;
+              }
+            }
+          }
+        }
+
+        .products-sort {
+          select {
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #222;
+            cursor: pointer;
+            background: #fff;
+
+            &:focus {
+              outline: none;
+              border-color: #1a5ae2;
+            }
+          }
+        }
+      }
+    }
+
+    .products-grid {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      min-height: 400px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      &.grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 24px;
+      }
+
+      &.list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    .no-products {
+      text-align: center;
+      padding: 60px 20px;
+
+      .no-products-icon {
+        font-size: 3rem;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #222;
+        margin-bottom: 8px;
+
+        &.no-products-subtitle {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+body.dark-theme {
+  .tourism-page {
+    background: #181c22;
+    color: #f3f3f3;
+
+    .page-header {
+      background: #23272f;
+      border-bottom: 1px solid #222;
+      h1 {
+        color: #7ecbff;
+      }
+      .breadcrumbs {
+        color: #bbb;
+        a {
+          color: #7ecbff;
+        }
+      }
+    }
+
+    .filters-sidebar,
+    .filters-sidebar-modern {
+      background: #23272f;
+      color: #f3f3f3;
+      box-shadow: 0 2px 8px #0006;
+      border-radius: 12px;
+      .filter-section {
+        border-bottom: 1px solid #222;
+        h3 {
+          color: #7ecbff;
+        }
+      }
+      .filter-item,
+      .filter-item-modern {
+        color: #bbb;
+        input[type="radio"],
+        input[type="checkbox"] {
+          accent-color: #7ecbff;
+          background: #23272f;
+          border: 1px solid #333;
+        }
+        &:hover {
+          color: #7ecbff;
+          background: #23272f;
+        }
+      }
+      .price-range {
+        input[type="range"] {
+          accent-color: #7ecbff;
+          background: #23272f;
+        }
+        .price-inputs input {
+          background: #23272f;
+          color: #f3f3f3;
+          border: 1px solid #333;
+        }
+        .price-inputs span {
+          color: #bbb;
+        }
+      }
+      .reset-filters,
+      .reset-filters-modern {
+        background: #23272f;
+        color: #7ecbff;
+        border: 1px solid #333;
+        &:hover {
+          background: #181c22;
+          color: #fff;
+        }
+      }
+    }
+
+    .products-section {
+      .products-header {
+        background: #23272f;
+        box-shadow: 0 2px 8px #0006;
+        .products-count {
+          color: #bbb;
+          span {
+            color: #7ecbff;
+          }
+        }
+        .products-controls {
+          .view-mode .view-btn {
+            background: #23272f;
+            border: 1px solid #333;
+            svg {
+              fill: #bbb;
+            }
+            &.active {
+              background: #7ecbff;
+              border-color: #7ecbff;
+              svg {
+                fill: #23272f;
+              }
+            }
+            &:hover {
+              border-color: #7ecbff;
+              svg {
+                fill: #7ecbff;
+              }
+            }
+          }
+          .products-sort select {
+            background: #23272f;
+            color: #f3f3f3;
+            border: 1px solid #333;
+          }
+        }
+      }
+      .products-grid {
+        background: #23272f;
+        color: #f3f3f3;
+        box-shadow: 0 2px 8px #0006;
+      }
+      .no-products-modern {
+        background: #23272f;
+        color: #f3f3f3;
+        box-shadow: 0 2px 8px #0006;
+        h2 {
+          color: #7ecbff;
+        }
+        .no-products-btn {
+          background: linear-gradient(90deg, #2563eb 60%, #7ecbff 100%);
+          color: #fff;
+        }
+        .no-products-btn:hover {
+          background: linear-gradient(90deg, #7ecbff 60%, #2563eb 100%);
+          color: #23272f;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+} 

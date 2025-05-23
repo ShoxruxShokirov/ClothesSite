@@ -1,0 +1,64 @@
+{
+  "trandingNfts": [
+    {
+      "id": "cixj",
+      "authorName": "AKE_FIX",
+      "name": "Monkey",
+      "price": "123",
+      "image": "https://www.reuters.com/resizer/v2/43YAWLITTZJLZIQTCP2JSS4KSM.jpg?auth=97aa50895d96abc0233aee045e9246a221d9afaa3d2470fd2bc7ba66baa1a5cc&width=1080&quality=80"
+    },
+    {
+      "id": "i7d8",
+      "authorName": "Javoxir Sinx",
+      "name": "QWERT",
+      "price": "12103",
+      "image": "https://www.coexya.eu/app/uploads/2022/04/nft-singes.webp"
+    },
+    {
+      "id": "o45v",
+      "authorName": "Jamshed (UPDATED)",
+      "name": "Istam",
+      "price": "232",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJrjSpbZqlb1BtVhZRSiIgWJFAoqP-STFjg&s"
+    },
+    {
+      "id": "81ap",
+      "authorName": "Istam(U)",
+      "name": "Nft#132",
+      "price": "344",
+      "image": "https://www.artnews.com/wp-content/uploads/2022/01/unnamed-2.png"
+    }
+  ],
+  "team": [
+    {
+      "id": "1",
+      "image": "Ellipse1.png",
+      "name": "Floyd Miles",
+      "position": "Founder"
+    },
+    {
+      "id": "2",
+      "image": "Ellipse2.png",
+      "name": "Eleanor Pena",
+      "position": "UI UX Designer"
+    },
+    {
+      "id": "3",
+      "image": "Ellipse3.png",
+      "name": "Kiss Dorka",
+      "position": "Ux Architect"
+    },
+    {
+      "id": "4",
+      "image": "Ellipse4.png",
+      "name": "Nagy Tímea",
+      "position": "Project Manage"
+    },
+    {
+      "id": "5",
+      "image": "Ellipse5.png",
+      "name": "William Loko",
+      "position": "Software Developer"
+    }
+  ]
+}

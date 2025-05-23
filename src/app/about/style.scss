@@ -1,0 +1,1375 @@
+@use "sass:color";
+@use "../../assets/styles/_globals.scss" as *;
+@use "../../assets/styles/initial.scss" as *;
+
+.about-page {
+    padding: 60px 0;
+    background-color: #fff;
+    color: $dark;    overflow: hidden;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, $red, $dark);
+        opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 30px 0;
+    }
+}
+
+.about-page-wrapper {
+    @include grid(2);
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 60px 0;
+    transition: all 0.3s ease;
+
+    .about-image {
+        position: relative;
+        
+        img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($red, 0.1), rgba($dark, 0.1));
+            border-radius: 15px;
+            z-index: 0;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        width: 90%;
+    }
+
+    @media (max-width: 768px) {
+        @include grid(1);
+        width: 90%;
+        text-align: center;
+        padding: 40px 0;
+        
+        .about-image {
+            margin-top: 30px;
+            
+            &::after {
+                right: 0;
+                top: 10px;
+            }
+        }
+    }
+    
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 30px 0;
+        
+        .about-image {
+            margin-top: 20px;
+        }
+    }
+
+    .about-page-content {
+        .section-label {
+            display: inline-block;
+            color: $red;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 5px;
+                height: 5px;
+                background-color: $red;
+                border-radius: 50%;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, $dark, $dark-gray);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+            line-height: 1.2;
+            
+            @media (max-width: 768px) {
+                font-size: 2.2rem;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .about-page-description {
+        width: 100%;
+        max-width: 500px;
+        margin-top: 20px;
+        color: $dark;
+        position: relative;
+        padding-left: 15px;
+        line-height: 1.6;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, $red, $dark);
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            margin: 20px auto 0;
+            padding-left: 0;
+            max-width: 100%;
+            
+            &::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+.about-content {
+    @include grid(2);
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 60px 0;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    @media (max-width: 992px) {
+        width: 90%;
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+        @include grid(1);
+        width: 90%;
+        text-align: center;
+        padding: 30px 0;
+        
+        .about-content-image {
+            order: 2;
+            margin-top: 30px;
+        }
+        
+        .about-nft-represent {
+            order: 1;
+            padding-left: 0;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 20px 0;
+        
+        .about-content-image {
+            margin-top: 20px;
+        }
+    }
+
+    .about-content-image {
+        position: relative;
+        
+        img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($red, 0.1), rgba($dark, 0.1));
+            border-radius: 15px;
+            z-index: 0;
+        }
+        
+        @media (max-width: 768px) {
+            &::after {
+                left: 0;
+                bottom: 10px;
+            }
+        }
+    }
+
+    .about-nft-represent {
+        padding-left: 60px;
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: $dark;
+            line-height: 1.2;
+            position: relative;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: $red;
+                border-radius: 3px;
+            }
+            
+            @media (max-width: 768px) {
+                font-size: 2rem;
+                
+                &::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 1.8rem;
+            }
+        }
+        
+        p {
+            color: $dark-gray;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            padding-left: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            padding-left: 0;
+            margin-top: 0;
+        }
+    }
+}
+
+.about-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    @media (max-width: 992px) {
+        width: 90%;
+        padding: 40px 0;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 30px 0;
+        gap: 20px;
+    }
+    
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    > div {
+        text-align: center;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-10px);
+        }
+        
+        img {
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            width: 80px;
+            height: 80px;
+            
+            &:hover {
+                transform: scale(1.1);
+            }
+            
+            @media (max-width: 768px) {
+                width: 70px;
+                height: 70px;
+            }
+            
+            @media (max-width: 480px) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: $dark;
+            margin-bottom: 5px;
+            
+            @media (max-width: 768px) {
+                font-size: 1.8rem;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 1.5rem;
+            }
+        }
+        
+        p {
+            color: $dark-gray;
+            font-size: 1rem;
+            font-weight: 500;
+            
+            @media (max-width: 768px) {
+                font-size: 0.95rem;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            flex: 0 0 calc(50% - 30px);
+        }
+        
+        @media (max-width: 576px) {
+            flex: 0 0 100%;
+        }
+    }
+}
+
+.about-nft-distro {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    @media (max-width: 992px) {
+        width: 90%;
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 30px 0;
+    }
+    
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 20px 0;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: $dark;
+        position: relative;
+        display: inline-block;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: $red;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .nft-distro {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        
+        @media (max-width: 992px) {
+            max-width: 600px;
+        }
+        
+        @media (max-width: 576px) {
+            max-width: 100%;
+            padding: 10px;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            object-fit: cover;
+            
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 90%;
+            background: linear-gradient(135deg, rgba($red, 0.1), rgba($dark, 0.1));
+            border-radius: 15px;
+            z-index: -1;
+        }
+    }
+}
+
+.about-partners {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    @media (max-width: 992px) {
+        width: 90%;
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 30px 0;
+    }
+    
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 20px 0;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: $dark;
+        position: relative;
+        display: inline-block;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: $red;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .about-partners-icon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        
+        @media (max-width: 768px) {
+            gap: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            gap: 15px;
+        }
+        
+        img {
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+            width: 120px;
+            height: 40px;
+            object-fit: contain;
+            
+            @media (max-width: 768px) {
+                width: 100px;
+                height: 35px;
+            }
+            
+            @media (max-width: 480px) {
+                width: 80px;
+                height: 30px;
+            }
+            
+            &:hover {
+                opacity: 1;
+                filter: grayscale(0%);
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.about-nft-team {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    @media (max-width: 992px) {
+        width: 90%;
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 30px 0;
+    }
+    
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 20px 0;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: $dark;
+        position: relative;
+        display: inline-block;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: $red;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .about-nft-team-image {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        
+        @media (max-width: 768px) {
+            gap: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            gap: 15px;
+        }
+        
+        > div {
+            width: 180px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            
+            @media (max-width: 768px) {
+                width: 160px;
+            }
+            
+            @media (max-width: 480px) {
+                width: 140px;
+            }
+            
+            &:hover {
+                transform: translateY(-10px);
+            }
+            
+            img {
+                border-radius: 50%;
+                margin-bottom: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease;
+                width: 180px;
+                height: 170px;
+                object-fit: cover;
+                
+                @media (max-width: 768px) {
+                    width: 160px;
+                    height: 150px;
+                }
+                
+                @media (max-width: 480px) {
+                    width: 140px;
+                    height: 130px;
+                }
+                
+                &:hover {
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                }
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $dark;
+                margin-bottom: 5px;
+                
+                @media (max-width: 768px) {
+                    font-size: 1.1rem;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 1rem;
+                }
+            }
+            
+            .about-nft-team-position {
+                color: $dark-gray;
+                font-size: 0.9rem;
+                
+                @media (max-width: 768px) {
+                    font-size: 0.85rem;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.about-nft-join {
+    width: 100%;
+    background: linear-gradient(135deg, rgba($red, 0.05), rgba($dark, 0.05));
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($dark, 0.1), transparent);
+    }
+    
+    @media (max-width: 992px) {
+        padding: 60px 0;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 30px 0;
+    }
+    
+    .about-nft-join-content {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        
+        @media (max-width: 992px) {
+            width: 90%;
+        }
+        
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+        
+        @media (max-width: 480px) {
+            width: 95%;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: $dark;
+            position: relative;
+            display: inline-block;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background: $red;
+                border-radius: 3px;
+            }
+            
+            @media (max-width: 768px) {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+        }
+        
+        p {
+            color: $dark-gray;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .about-nft-join-button {
+            background: $red;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba($red, 0.3);
+            
+            @media (max-width: 768px) {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+            
+            @media (max-width: 480px) {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            &:hover {
+                background: color.scale($red, $lightness: -10%);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba($red, 0.4);
+            }
+            
+            &:active {
+                transform: translateY(0);
+                box-shadow: 0 3px 10px rgba($red, 0.3);
+            }
+        }
+    }
+}
+
+.about-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .modal-content {
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+        
+        @media (max-width: 768px) {
+            padding: 30px;
+            width: 85%;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 20px;
+            width: 90%;
+        }
+        
+        .active & {
+            transform: translateY(0);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: $dark-gray;
+            transition: color 0.3s ease;
+            
+            @media (max-width: 480px) {
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+            }
+            
+            &:hover {
+                color: $red;
+            }
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: $dark;
+            
+            @media (max-width: 768px) {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+        }
+        
+        p {
+            color: $dark-gray;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            
+            @media (max-width: 768px) {
+                font-size: 0.95rem;
+                margin-bottom: 25px;
+            }
+            
+            @media (max-width: 480px) {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .modal-submit {
+            background: $red;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba($red, 0.3);
+            
+            @media (max-width: 768px) {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+            
+            @media (max-width: 480px) {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            &:hover {
+                background: color.scale($red, $lightness: -10%);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba($red, 0.4);
+            }
+            
+            &:active {
+                transform: translateY(0);
+                box-shadow: 0 3px 10px rgba($red, 0.3);
+            }
+        }
+    }
+}
+
+.about-hero-section {
+    width: 100%;
+    min-height: 180px;
+    background: linear-gradient(90deg, #eaf0fa 60%, #fff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+    padding-left: 60px;
+}
+.about-hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a5ae2;
+    margin-bottom: 10px;
+}
+.about-hero-desc {
+    color: #222;
+    font-weight: 500;
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+.about-why-card {
+    margin: 0 auto 40px auto;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 32px;
+}
+.about-why-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a5ae2;
+}
+.about-why-list {
+    font-size: 1.08rem;
+    color: #222;
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+.about-why-bottom {
+    font-size: 1.08rem;
+    color: #222;
+}
+
+body.dark-theme {
+    .about-page {
+        background-color: #1a1a1a;
+        color: #f5f5f5;
+        
+        &::before {
+            opacity: 0.5;
+        }
+    }
+    
+    .about-page-wrapper {
+        .about-page-content {
+            .section-label {
+                color: $red;
+                
+                &::before {
+                    background-color: $red;
+                }
+            }
+            
+            h1 {
+                background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        
+        .about-page-description {
+            color: #e0e0e0;
+            
+            &::before {
+                background: linear-gradient(to bottom, $red, #f5f5f5);
+            }
+        }
+    }
+    
+    .about-content {
+        &::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        .about-nft-represent {
+            h2 {
+                color: #f5f5f5;
+                
+                &::after {
+                    background: $red;
+                }
+            }
+            
+            p {
+                color: #e0e0e0;
+            }
+        }
+    }
+    
+    .about-icons {
+        &::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        > div {
+            h3 {
+                color: #f5f5f5;
+            }
+            
+            p {
+                color: #e0e0e0;
+            }
+        }
+    }
+    
+    .about-nft-distro {
+        &::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        h2 {
+            color: #f5f5f5;
+            
+            &::after {
+                background: $red;
+            }
+        }
+    }
+    
+    .about-partners {
+        &::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        h2 {
+            color: #f5f5f5;
+            
+            &::after {
+                background: $red;
+            }
+        }
+    }
+    
+    .about-nft-team {
+        &::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        h2 {
+            color: #f5f5f5;
+            
+            &::after {
+                background: $red;
+            }
+        }
+        
+        .about-nft-team-image > div {
+            h3 {
+                color: #f5f5f5;
+            }
+            
+            .about-nft-team-position {
+                color: #e0e0e0;
+            }
+        }
+    }
+    
+    .about-nft-join {
+        background: linear-gradient(135deg, rgba($red, 0.1), rgba(255, 255, 255, 0.05));
+        
+        &::before, &::after {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        .about-nft-join-content {
+            h2 {
+                color: #f5f5f5;
+                
+                &::after {
+                    background: $red;
+                }
+            }
+            
+            p {
+                color: #e0e0e0;
+            }
+        }
+    }
+    
+    .about-modal {
+        .modal-content {
+            background-color: #2a2a2a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            
+            h2 {
+                color: #f5f5f5;
+            }
+            
+            p {
+                color: #e0e0e0;
+            }
+            
+            .modal-close {
+                color: #e0e0e0;
+                
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+    }
+    
+    .about-hero-section {
+        background: linear-gradient(90deg, #181c22 60%, #23272f 100%);
+    }
+    .about-hero-title {
+        color: #7ecbff;
+    }
+    .about-hero-desc {
+        color: #f3f3f3;
+    }
+    .about-why-card {
+        background: #23272f;
+        color: #f3f3f3;
+        box-shadow: 0 2px 8px #0006;
+    }
+    .about-why-title {
+        color: #7ecbff;
+    }
+    .about-why-list {
+        color: #f3f3f3;
+    }
+    .about-why-bottom {
+        color: #bbb;
+    }
+}
+
+.about-contacts-card {
+    margin: 0 auto;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 32px;
+    margin-top: 32px;
+}
+.about-contacts-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a5ae2;
+}
+.about-contacts-row {
+    font-size: 1.05rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+.about-contacts-link {
+    color: #1a5ae2;
+    text-decoration: underline;
+}
+
+body.dark-theme {
+    .about-contacts-card {
+        background: #23272f;
+        color: #f3f3f3;
+        box-shadow: 0 2px 8px #0006;
+    }
+    .about-contacts-title {
+        color: #7ecbff;
+    }
+    .about-contacts-row {
+        color: #f3f3f3;
+    }
+    .about-contacts-link {
+        color: #7ecbff;
+    }
+}
