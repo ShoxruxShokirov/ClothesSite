@@ -19,21 +19,11 @@ export default function TourismPage() {
   ]
 
   const brands = [
-    "The North Face",
-    "Salomon",
-    "Mammut",
-    "Black Diamond",
-    "Osprey",
-    "Deuter",
-    "MSR",
-    "Petzl"
+    "The North Face", "Salomon", "Mammut", "Black Diamond", "Osprey", "Deuter", "MSR", "Petzl"
   ]
 
   const features = [
-    "New Arrivals",
-    "Special Offers",
-    "Best Sellers",
-    "Sale"
+    "New Arrivals", "Special Offers", "Best Sellers", "Sale"
   ]
 
   return (
@@ -105,9 +95,7 @@ export default function TourismPage() {
               </div>
             </div>
 
-            <button className="reset-filters-modern">
-              Reset Filters
-            </button>
+            <button className="reset-filters-modern">Reset Filters</button>
           </aside>
 
           <div className="products-section">
@@ -117,9 +105,9 @@ export default function TourismPage() {
               </div>
               <div className="products-controls">
                 <div className="view-mode">
-                  <button 
-                    className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
-                    onClick={() => setViewMode('grid')}
+                  <button
+                    className={`view-btn ${viewMode === "grid" ? "active" : ""}`}
+                    onClick={() => setViewMode("grid")}
                   >
                     <svg viewBox="0 0 24 24" width="20" height="20">
                       <rect x="3" y="3" width="7" height="7" />
@@ -128,9 +116,9 @@ export default function TourismPage() {
                       <rect x="14" y="14" width="7" height="7" />
                     </svg>
                   </button>
-                  <button 
-                    className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-                    onClick={() => setViewMode('list')}
+                  <button
+                    className={`view-btn ${viewMode === "list" ? "active" : ""}`}
+                    onClick={() => setViewMode("list")}
                   >
                     <svg viewBox="0 0 24 24" width="20" height="20">
                       <rect x="3" y="3" width="18" height="4" />
@@ -154,11 +142,11 @@ export default function TourismPage() {
               <div className="no-products-modern">
                 <div className="no-products-svg">
                   <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="36" cy="36" r="24" fill="#e3eafd"/>
-                    <circle cx="36" cy="36" r="18" fill="#1a5ae2" fillOpacity="0.15"/>
-                    <circle cx="36" cy="36" r="12" fill="#1a5ae2" fillOpacity="0.25"/>
-                    <circle cx="36" cy="36" r="7" fill="#1a5ae2"/>
-                    <rect x="54" y="54" width="18" height="8" rx="4" transform="rotate(45 54 54)" fill="#4a90e2"/>
+                    <circle cx="36" cy="36" r="24" fill="#e3eafd" />
+                    <circle cx="36" cy="36" r="18" fill="#1a5ae2" fillOpacity="0.15" />
+                    <circle cx="36" cy="36" r="12" fill="#1a5ae2" fillOpacity="0.25" />
+                    <circle cx="36" cy="36" r="7" fill="#1a5ae2" />
+                    <rect x="54" y="54" width="18" height="8" rx="4" transform="rotate(45 54 54)" fill="#4a90e2" />
                   </svg>
                 </div>
                 <h2>Products will appear soon</h2>
@@ -169,9 +157,6 @@ export default function TourismPage() {
           </div>
         </div>
       </div>
-      <style jsx>{
-        
-      }</style>
     </main>
   )
-} 
+}
