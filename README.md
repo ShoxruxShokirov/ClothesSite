@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Starting point
 1. Clone the repository from https://github.com/AlisherXujanov/fullstack18.git
 2. cd fullstack18/frontend
@@ -27,3 +28,7 @@ RU: Когда что-то нужно сохранить, просто зако�
 
 
 
+=======
+# ClothesSite
+it is the best of the best
+>>>>>>> 6ea576af2d8cbd1cd2a2e91198d955603ad7fb0e
