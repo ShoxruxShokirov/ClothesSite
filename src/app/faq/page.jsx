@@ -4,6 +4,8 @@ import Heading from "../components/Heading"
 import { useState } from "react"
 import "./style.scss"
 
+export const dynamic = "force-static";
+
 function FAQ() {
     const [activeTab, setActiveTab] = useState("General");
     const [searchQuery, setSearchQuery] = useState("");
