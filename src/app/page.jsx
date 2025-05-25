@@ -1,3 +1,4 @@
+'use client';
 // npx json-server -w src/store/db.json -p 3001
 
 const categories = [
