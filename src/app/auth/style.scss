@@ -1,4 +1,4 @@
-@import '@/assets/styles/_globals.scss';
+@use "@/assets/styles/_globals.scss" as *;
 
 .auth-container {
     display: flex;
@@ -147,7 +147,7 @@
             transition: all 0.3s ease;
 
             &:hover {
-                color: lighten($red, 10%);
+                color: color.adjust($red, $lightness: 10%);
             }
         }
     }
