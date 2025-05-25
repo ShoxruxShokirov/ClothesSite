@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 const products = [
   { name: 'Adidas Sneakers', price: '600,000 UZS', img: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80' },
   { name: 'Salomon Boots', price: '1,100,000 UZS', img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80' },

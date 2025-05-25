@@ -1,0 +1,232 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/a7f9419b92a8b299.css",
+      "static/chunks/8e1d74a4-2b2c59af901f35ad.js",
+      "static/chunks/aa35ee89-c6a4938f47eb2055.js",
+      "static/chunks/5799-d88cedbe26bd1b0d.js",
+      "static/chunks/6874-98d829ca47609aa1.js",
+      "static/chunks/5789-6018dad60aa439b1.js",
+      "static/chunks/app/layout-129ebf4a0192f067.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/6874-98d829ca47609aa1.js",
+      "static/chunks/app/not-found-d466c342066c3e26.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/7628db25b21983b9.css",
+      "static/chunks/6766-6205cc53952b772d.js",
+      "static/chunks/app/about/page-ddf4b94c8dd0d90b.js"
+    ],
+    "/categories/cycling/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/d8f6de9403b49476.css",
+      "static/chunks/app/categories/cycling/page-d823e1ad502eae0e.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/_not-found/page-34330b2750a6aae6.js"
+    ],
+    "/accessories/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/accessories/page-780d14428bd8ce16.js"
+    ],
+    "/auth/register/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/8e1d74a4-2b2c59af901f35ad.js",
+      "static/chunks/aa35ee89-c6a4938f47eb2055.js",
+      "static/chunks/5799-d88cedbe26bd1b0d.js",
+      "static/chunks/6874-98d829ca47609aa1.js",
+      "static/chunks/5789-6018dad60aa439b1.js",
+      "static/chunks/app/auth/register/page-70d6d00dc207d0c9.js"
+    ],
+    "/auth/login/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/bed428c66ff91a5e.css",
+      "static/chunks/aa35ee89-c6a4938f47eb2055.js",
+      "static/chunks/fc2f6fa8-fb905fc9b3f2aa3e.js",
+      "static/chunks/5799-d88cedbe26bd1b0d.js",
+      "static/chunks/6874-98d829ca47609aa1.js",
+      "static/chunks/5789-6018dad60aa439b1.js",
+      "static/chunks/app/auth/login/page-6afeec85e6d703db.js"
+    ],
+    "/categories/swimming/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/42e3b3aa4c2d4e73.css",
+      "static/chunks/app/categories/swimming/page-6c6d935fa53a222b.js"
+    ],
+    "/categories/tourism/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/3fb35ca92f5f1937.css",
+      "static/chunks/app/categories/tourism/page-5e1d7e0ff4301728.js"
+    ],
+    "/cycling/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/cycling/page-a89fe37c2828aec8.js"
+    ],
+    "/clothing/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/clothing/page-2f8af2ef4b0dd193.js"
+    ],
+    "/categories/winter-sports/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/eab8c74113fe8c75.css",
+      "static/chunks/app/categories/winter-sports/page-cf467a20acda1ec7.js"
+    ],
+    "/faq/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/0401cb53e925a684.css",
+      "static/css/0bc58fcf9379f6df.css",
+      "static/chunks/app/faq/page-b94ef9bd731de8c9.js"
+    ],
+    "/home/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/57b89393a4ca6d29.css",
+      "static/chunks/6766-6205cc53952b772d.js",
+      "static/chunks/1978-018f4dea6f9b65ed.js",
+      "static/chunks/8631-daeaedbe2b84c10d.js",
+      "static/chunks/app/home/page-cd96a354919e9ac4.js"
+    ],
+    "/nft/[id]/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/c8c3a072f0b7cd76.css",
+      "static/chunks/app/nft/[id]/page-d68fb404fd69f7c9.js"
+    ],
+    "/jewelry/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/57b89393a4ca6d29.css",
+      "static/chunks/6766-6205cc53952b772d.js",
+      "static/chunks/1978-018f4dea6f9b65ed.js",
+      "static/chunks/8631-daeaedbe2b84c10d.js",
+      "static/chunks/app/jewelry/page-5f8678bbe4abfca6.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/33ee2eb45136dac4.css",
+      "static/chunks/6766-6205cc53952b772d.js",
+      "static/chunks/5799-d88cedbe26bd1b0d.js",
+      "static/chunks/6874-98d829ca47609aa1.js",
+      "static/chunks/app/page-4143c8fdda803942.js"
+    ],
+    "/profile/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/620f47c1a66dc4c0.css",
+      "static/chunks/8e1d74a4-2b2c59af901f35ad.js",
+      "static/chunks/aa35ee89-c6a4938f47eb2055.js",
+      "static/chunks/5799-d88cedbe26bd1b0d.js",
+      "static/chunks/5789-6018dad60aa439b1.js",
+      "static/chunks/app/profile/page-f0e7a1f4c50f819f.js"
+    ],
+    "/swimming/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/swimming/page-6a1f248951dc2e44.js"
+    ],
+    "/shoes/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/shoes/page-27e919fabb9d8e49.js"
+    ],
+    "/tourism/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/8e1d74a4-2b2c59af901f35ad.js",
+      "static/chunks/1978-018f4dea6f9b65ed.js",
+      "static/chunks/535-e7316097b3eda7d9.js",
+      "static/chunks/app/tourism/page-c27273bb1cb5bdc4.js"
+    ],
+    "/sale/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/57b89393a4ca6d29.css",
+      "static/chunks/6766-6205cc53952b772d.js",
+      "static/chunks/1978-018f4dea6f9b65ed.js",
+      "static/chunks/8631-daeaedbe2b84c10d.js",
+      "static/chunks/app/sale/page-4076d611f80d4f71.js"
+    ],
+    "/trending/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/css/0401cb53e925a684.css",
+      "static/css/e4e8b5958ebd6a34.css",
+      "static/chunks/app/trending/page-970d0d6088f03aa3.js"
+    ],
+    "/winter-sports/page": [
+      "static/chunks/webpack-9aeebed46c891870.js",
+      "static/chunks/4bd1b696-7261d0cba7c8e1c3.js",
+      "static/chunks/1684-022d028c8f173e36.js",
+      "static/chunks/main-app-afc422bc4218d18e.js",
+      "static/chunks/app/winter-sports/page-2bcb16c172f80844.js"
+    ]
+  }
+}
