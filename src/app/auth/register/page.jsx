@@ -9,6 +9,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { FaUpload } from 'react-icons/fa'
 import { setSessionCookie } from "@/utils/cookies"
 
+export const dynamic = "force-static";
 
 function Register() {
     const [formData, setFormData] = useState({
