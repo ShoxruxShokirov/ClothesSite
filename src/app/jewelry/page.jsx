@@ -1,5 +1,7 @@
 import ProductCatalog from "../components/ProductCatalog";
 
+export const dynamic = "force-static";
+
 export default function JewelryPage() {
   return (
     <main style={{padding: '40px 5vw'}}>

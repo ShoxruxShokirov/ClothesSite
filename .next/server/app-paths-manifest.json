@@ -1,6 +1,25 @@
 {
-  "/page": "app/page.js",
-  "/categories/tourism/page": "app/categories/tourism/page.js",
+  "/about/page": "app/about/page.js",
   "/categories/cycling/page": "app/categories/cycling/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/accessories/page": "app/accessories/page.js",
+  "/auth/register/page": "app/auth/register/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/categories/swimming/page": "app/categories/swimming/page.js",
+  "/categories/tourism/page": "app/categories/tourism/page.js",
+  "/cycling/page": "app/cycling/page.js",
+  "/clothing/page": "app/clothing/page.js",
+  "/categories/winter-sports/page": "app/categories/winter-sports/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/home/page": "app/home/page.js",
+  "/nft/[id]/page": "app/nft/[id]/page.js",
+  "/jewelry/page": "app/jewelry/page.js",
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/swimming/page": "app/swimming/page.js",
+  "/shoes/page": "app/shoes/page.js",
+  "/tourism/page": "app/tourism/page.js",
+  "/sale/page": "app/sale/page.js",
+  "/trending/page": "app/trending/page.js",
+  "/winter-sports/page": "app/winter-sports/page.js"
 }

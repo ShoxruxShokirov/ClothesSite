@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { toast } from "react-toastify"
 import { auth } from "@/firebase/config"
@@ -123,4 +123,10 @@ function Login() {
     )
 }
 
-export default Login
+export default function LoginPage() {
+    return (
+        <Suspense>
+            <Login />
+        </Suspense>
+    )
+}
