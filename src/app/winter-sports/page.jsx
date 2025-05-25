@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 const products = [
   { name: 'Сноуборд Burton', price: '5 500 000 сум', img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80' },
   { name: 'Горнолыжные ботинки Rossignol', price: '3 000 000 сум', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
