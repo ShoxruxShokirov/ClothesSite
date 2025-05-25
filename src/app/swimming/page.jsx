@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 const products = [
   { name: 'Купальник Arena', price: '400 000 сум', img: 'https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=400&q=80' },
   { name: 'Очки для плавания Speedo', price: '150 000 сум', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
