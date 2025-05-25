@@ -6,6 +6,8 @@ import "./style.scss"
 import { useContext } from "react";
 import { context } from "../../store";
 
+export const dynamic = "force-static";
+
 function Trending() {
     const store = useContext(context)
 
