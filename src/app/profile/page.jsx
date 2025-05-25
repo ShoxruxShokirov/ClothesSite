@@ -8,8 +8,6 @@ import { FaSignOutAlt } from 'react-icons/fa'
 import { useRouter } from "next/navigation"
 import { toast } from "react-toastify"
 
-export const dynamic = "force-static";
-
 function Profile() {
     const { user, loading } = useAuth()
     const profileImage = user?.photoURL || "https://static-00.iconduck.com/assets.00/profile-default-icon-256x256-tsi8241r.png"
