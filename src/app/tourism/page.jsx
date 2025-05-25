@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
@@ -53,7 +54,7 @@ export default function TourismPage() {
                 <h3 className="product-name">{prod.name}</h3>
                 <p className="product-price">{prod.price}</p>
                 <div className="product-actions">
-                  <a href="tel:+998977603236" className="btn btn-primary">
+                  <a href="tel:+998772204348" className="btn btn-primary">
                     <FaPhone /> Позвонить
                   </a>
                   <a href="mailto:rideruz@yandex.com" className="btn btn-secondary">

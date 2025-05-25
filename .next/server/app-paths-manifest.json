@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/categories/tourism/page": "app/categories/tourism/page.js",
+  "/categories/cycling/page": "app/categories/cycling/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}
