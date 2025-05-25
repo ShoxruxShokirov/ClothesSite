@@ -8,6 +8,8 @@ const products = [
   { name: 'Alexika Sleeping Bag', price: '800 000 UZS', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
 ];
 
+export const dynamic = "force-static";
+
 export default function TourismPage() {
   return (
     <main className="tourism-page">
