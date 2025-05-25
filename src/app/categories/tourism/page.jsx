@@ -1,5 +1,5 @@
 // src/app/tourism/page.jsx
-import TourismClient from "@/components/TourismClient"
+import TourismClient from "./TourismClient.jsx"
 
 export default function Page() {
   return <TourismClient />
