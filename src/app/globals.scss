@@ -30,6 +30,15 @@ body.dark-theme {
   color: var(--text-dark);
 }
 
+body::-webkit-scrollbar {
+  width: 10px !important;
+  background: #181818 !important;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px !important;
+  background: linear-gradient(180deg, #2196f3 0%, #21cbf3 100%) !important;
+}
+
 .page-container {
   min-height: 100vh;
   display: flex;
@@ -77,4 +86,23 @@ body.dark-theme {
   .content-wrap {
     padding: 12px;
   }
+}
+
+.page-container::-webkit-scrollbar {
+  width: 10px;
+  background: #181818;
+}
+.page-container::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: linear-gradient(180deg, #2196f3 0%, #21cbf3 100%);
+}
+
+/* Кастомный синий градиент для скроллбара */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #181818;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: linear-gradient(180deg, #2196f3 0%, #21cbf3 100%);
 } 

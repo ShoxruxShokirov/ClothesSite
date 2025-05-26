@@ -1,4 +1,5 @@
 'use client';
+import "./components/page.scss";
 // npx json-server -w src/store/db.json -p 3001
 import { useState } from "react";
 import Carousel from "./components/Carousel";

@@ -11,7 +11,13 @@ export default function LoadingBarWrapper() {
   );
 }
 
-function LoadingBar() {
+function LoadingBar({
+  height = 4,
+  gradient = 'linear-gradient(90deg, #2196f3 0%, #21cbf3 100%)',
+  boxShadow = '0 2px 8px 0 rgba(33, 150, 243, 0.15)',
+  borderRadius = 3,
+  opacity = 0.95,
+}) {
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const pathname = usePathname();
@@ -20,17 +26,12 @@ function LoadingBar() {
   useEffect(() => {
     setLoading(true);
     setProgress(0);
-
-    // Minimum duration for the loading animation (in milliseconds)
     const minDuration = 800;
     const startTime = Date.now();
-
     const timer = setInterval(() => {
       const elapsedTime = Date.now() - startTime;
       const progress = Math.min((elapsedTime / minDuration) * 100, 100);
-
       setProgress(progress);
-
       if (progress >= 100) {
         clearInterval(timer);
         setTimeout(() => {
@@ -38,8 +39,7 @@ function LoadingBar() {
           setProgress(0);
         }, 200);
       }
-    }, 16); // 60fps for smooth animation
-
+    }, 16);
     return () => {
       clearInterval(timer);
     };
@@ -54,12 +54,16 @@ function LoadingBar() {
         top: 0,
         left: 0,
         right: 0,
-        height: '3px',
-        background: 'linear-gradient(to right, #ff4b4b, #ff7676)',
+        height: height,
+        background: gradient,
+        boxShadow: boxShadow,
+        borderRadius: borderRadius,
+        opacity: opacity,
         transform: `scaleX(${progress / 100})`,
         transformOrigin: 'left',
-        transition: 'transform 0.1s linear',
+        transition: 'transform 0.2s cubic-bezier(0.4,0,0.2,1)',
         zIndex: 9999,
+        pointerEvents: 'none',
       }}
     />
   );

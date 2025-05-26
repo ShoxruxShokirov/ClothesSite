@@ -8,6 +8,7 @@ import "../style.scss"
 import { useRouter } from 'next/navigation'
 import { FcGoogle } from "react-icons/fc";
 import { setSessionCookie } from "@/utils/cookies"
+import { FaEnvelope, FaLock } from "react-icons/fa";
 
 
 function Login() {
@@ -15,30 +16,28 @@ function Login() {
         email: "",
         password: "",
     })
+    const [isLoading, setIsLoading] = useState(false);
     const router = useRouter()
 
     function submitForm(e) {
         e.preventDefault()
-
+        setIsLoading(true);
         for (let key in formData) {
             if (formData[key] === "") {
                 toast.error("Please fill in all fields", { theme: "dark" })
+                setIsLoading(false);
                 return
             }
         }
-
         signInWithEmailAndPassword(auth, formData.email, formData.password)
             .then((userCredential) => {
                 const user = userCredential.user
-                
-                // Store user data in cookies
                 const userData = {
                     displayName: user.displayName,
                     email: user.email,
                     photoURL: user.photoURL,
                     emailVerified: user.emailVerified
                 }
-                
                 setSessionCookie(user.uid, userData)
                 toast.success("Signed in successfully!", { theme: "dark" })
                 router.push('/')
@@ -47,6 +46,7 @@ function Login() {
                 toast.error(error.message, { theme: "dark" })
                 router.push('/auth/login')
             })
+            .finally(() => setIsLoading(false));
     }
 
     function handleFormChange(e) {
@@ -84,6 +84,7 @@ function Login() {
             <form onSubmit={submitForm}>
                 <div className="form-field">
                     <label htmlFor="email">Email</label>
+                    <span className="input-icon"><FaEnvelope /></span>
                     <input
                         id="email"
                         type="email"
@@ -95,6 +96,7 @@ function Login() {
                 </div>
                 <div className="form-field">
                     <label htmlFor="password">Password</label>
+                    <span className="input-icon"><FaLock /></span>
                     <input
                         id="password"
                         type="password"
@@ -105,10 +107,12 @@ function Login() {
                     />
                 </div>
                 <div className="form-field">
-                    <button type="submit">Sign in</button>
+                    <button type="submit" className="register-btn" disabled={isLoading}>
+                        {isLoading ? "Signing in..." : "Sign in"}
+                    </button>
                 </div>
                 <div className="form-field">
-                    <button id="google-btn" type="button" className="google-btn" onClick={handleGoogleSignIn}>
+                    <button id="google-btn" type="button" className="google-btn" onClick={handleGoogleSignIn} disabled={isLoading}>
                         <FcGoogle /> Sign in with Google
                     </button>
                 </div>
