@@ -5,6 +5,9 @@ import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
 import { FaUpload } from 'react-icons/fa'
 import { setSessionCookie } from "@/utils/cookies"
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { auth, storage } from "@/firebase/config"
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
 function Register() {
     const [formData, setFormData] = useState({
@@ -104,19 +107,57 @@ function Register() {
                 setIsLoading(false)
                 return
             }
-            // Вместо Firebase просто сохраняем фиктивного пользователя в cookie
+            // Create user
+            const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+            const user = userCredential.user
+            // Set display name (concatenate first and last name)
             const displayName = `${formData.firstName} ${formData.lastName}`
+            // Upload photo if provided
+            let photoURL = null
+            if (photoFile) {
+                // Resize the image before upload
+                const resizedImage = await resizeImage(photoFile)
+                const storageRef = ref(storage, `profile_photos/${user.uid}`)
+                const uploadTask = uploadBytesResumable(storageRef, resizedImage)
+                // Wait for upload to complete
+                await new Promise((resolve, reject) => {
+                    uploadTask.on(
+                        'state_changed',
+                        (snapshot) => {
+                            // Optional: track upload progress
+                            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                            console.log('Upload is ' + progress + '% done')
+                        },
+                        (error) => {
+                            console.error('Upload error:', error)
+                            reject(error)
+                        },
+                        async () => {
+                            // Upload completed successfully, get download URL
+                            photoURL = await getDownloadURL(uploadTask.snapshot.ref)
+                            resolve()
+                        }
+                    )
+                })
+            }
+            // Update user profile with display name and photo URL
+            await updateProfile(user, {
+                displayName,
+                photoURL: photoURL || null
+            })
+            // Store user data in cookies for session
             const userData = {
                 displayName,
                 email: formData.email,
-                photoURL: photoPreview || null,
-                emailVerified: true
+                photoURL: photoURL || null,
+                emailVerified: user.emailVerified
             }
-            setSessionCookie(formData.email, userData)
-            toast.success("Account created successfully! (no Firebase)", { theme: "dark" })
+            setSessionCookie(user.uid, userData)
+            toast.success("Account created successfully!", { theme: "dark" })
             router.push('/')
         } catch (error) {
-            toast.error("Registration error!", { theme: "dark" })
+            console.error("Registration error:", error)
+            toast.error(error.message, { theme: "dark" })
         } finally {
             setIsLoading(false)
         }

@@ -17,6 +17,7 @@ function Profile() {
         const ID = e.target.id
         if (ID === 'logout-btn') {
             try {
+                await auth.signOut()
                 removeSessionCookie()
                 toast.success('Logged out successfully', { theme: 'dark' })
                 router.push('/')
