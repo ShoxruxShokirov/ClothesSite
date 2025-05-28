@@ -1,11 +1,8 @@
 "use client"
 import Link from "next/link";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { useState, useRef } from "react"
-import { auth, storage } from "@/firebase/config"
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { FaUpload } from 'react-icons/fa'
 import { setSessionCookie } from "@/utils/cookies"
 
@@ -93,7 +90,6 @@ function Register() {
     async function submitForm(e) {
         e.preventDefault()
         setIsLoading(true)
-
         try {
             // Validate all fields
             for (let key in formData) {
@@ -103,71 +99,24 @@ function Register() {
                     return
                 }
             }
-
             if (formData.password !== formData.password2) {
                 toast.error("Passwords do not match", { theme: "dark" })
                 setIsLoading(false)
                 return
             }
-
-            // Create user
-            const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
-            const user = userCredential.user
-
-            // Set display name (concatenate first and last name)
+            // Вместо Firebase просто сохраняем фиктивного пользователя в cookie
             const displayName = `${formData.firstName} ${formData.lastName}`
-            
-            // Upload photo if provided
-            let photoURL = null
-            if (photoFile) {
-                // Resize the image before upload
-                const resizedImage = await resizeImage(photoFile)
-                
-                const storageRef = ref(storage, `profile_photos/${user.uid}`)
-                const uploadTask = uploadBytesResumable(storageRef, resizedImage)
-                
-                // Wait for upload to complete
-                await new Promise((resolve, reject) => {
-                    uploadTask.on(
-                        'state_changed',
-                        (snapshot) => {
-                            // Optional: track upload progress
-                            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                            console.log('Upload is ' + progress + '% done')
-                        },
-                        (error) => {
-                            console.error('Upload error:', error)
-                            reject(error)
-                        },
-                        async () => {
-                            // Upload completed successfully, get download URL
-                            photoURL = await getDownloadURL(uploadTask.snapshot.ref)
-                            resolve()
-                        }
-                    )
-                })
-            }
-
-            // Update user profile with display name and photo URL
-            await updateProfile(user, {
-                displayName,
-                photoURL: photoURL || null
-            })
-
-            // Store user data in cookies for session
             const userData = {
                 displayName,
                 email: formData.email,
-                photoURL: photoURL || null,
-                emailVerified: user.emailVerified
+                photoURL: photoPreview || null,
+                emailVerified: true
             }
-
-            setSessionCookie(user.uid, userData)
-            toast.success("Account created successfully!", { theme: "dark" })
+            setSessionCookie(formData.email, userData)
+            toast.success("Account created successfully! (no Firebase)", { theme: "dark" })
             router.push('/')
         } catch (error) {
-            console.error("Registration error:", error)
-            toast.error(error.message, { theme: "dark" })
+            toast.error("Registration error!", { theme: "dark" })
         } finally {
             setIsLoading(false)
         }

@@ -1,14 +1,12 @@
 "use client"
 import { useState, Suspense } from "react"
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
-import { toast } from "react-toastify"
-import { auth } from "@/firebase/config"
 import Link from "next/link"
 import "../style.scss"
 import { useRouter } from 'next/navigation'
 import { FcGoogle } from "react-icons/fc";
 import { setSessionCookie } from "@/utils/cookies"
 import { FaEnvelope, FaLock } from "react-icons/fa";
+import { toast } from "react-toastify"
 
 
 function Login() {
@@ -29,24 +27,17 @@ function Login() {
                 return
             }
         }
-        signInWithEmailAndPassword(auth, formData.email, formData.password)
-            .then((userCredential) => {
-                const user = userCredential.user
-                const userData = {
-                    displayName: user.displayName,
-                    email: user.email,
-                    photoURL: user.photoURL,
-                    emailVerified: user.emailVerified
-                }
-                setSessionCookie(user.uid, userData)
-                toast.success("Signed in successfully!", { theme: "dark" })
-                router.push('/')
-            })
-            .catch((error) => {
-                toast.error(error.message, { theme: "dark" })
-                router.push('/auth/login')
-            })
-            .finally(() => setIsLoading(false));
+        // Вместо Firebase просто сохраняем фиктивного пользователя в cookie
+        const userData = {
+            displayName: formData.email.split("@")[0],
+            email: formData.email,
+            photoURL: null,
+            emailVerified: true
+        }
+        setSessionCookie(formData.email, userData)
+        toast.success("Signed in successfully! (no Firebase)", { theme: "dark" })
+        router.push('/')
+        setIsLoading(false);
     }
 
     function handleFormChange(e) {
@@ -57,25 +48,16 @@ function Login() {
     }
 
     async function handleGoogleSignIn() {
-        try {
-            const provider = new GoogleAuthProvider()
-            const result = await signInWithPopup(auth, provider)
-            const user = result.user
-            
-            // Store additional user data in cookies
-            const userData = {
-                displayName: user.displayName,
-                email: user.email,
-                photoURL: user.photoURL,
-                emailVerified: user.emailVerified
-            }
-            
-            setSessionCookie(user.uid, userData)
-            toast.success("Signed in with Google successfully!", { theme: "dark" })
-            router.push('/')
-        } catch (error) {
-            toast.error(error.message, { theme: "dark" })
+        // Вместо Google авторизации просто создаём фиктивного пользователя
+        const userData = {
+            displayName: "GoogleUser",
+            email: "googleuser@example.com",
+            photoURL: null,
+            emailVerified: true
         }
+        setSessionCookie("googleuser@example.com", userData)
+        toast.success("Signed in with Google! (no Firebase)", { theme: "dark" })
+        router.push('/')
     }
 
     return (

@@ -1,19 +1,15 @@
 "use client"
 import { useState, useEffect } from 'react'
-import { auth } from '@/firebase/config'
-import { onAuthStateChanged } from 'firebase/auth'
+import { getUserDataCookie } from '@/utils/cookies'
 
 export function useAuth() {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setUser(user)
-            setLoading(false)
-        })
-
-        return () => unsubscribe()
+        const userData = getUserDataCookie()
+        setUser(userData)
+        setLoading(false)
     }, [])
 
     return { user, loading }
